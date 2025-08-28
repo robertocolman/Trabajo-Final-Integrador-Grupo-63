@@ -4,3 +4,52 @@ body {
     margin: 0;
     color: black;
 }
+
+header {
+    background-color: gray;
+    color: white;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgb(0, 0, 0.06);
+}
+
+header h1{
+    margin: 0 0 10px 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+    justify-content: center;
+    gap: 20px
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul a{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: text-decoration 0.2s, color 0.2s;
+}
+
+nav ul a:hover{
+    text-decoration: underline;
+    color: green;
+}
+
+main{
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 0px;
+}
+
+footer{
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 0px;
+}

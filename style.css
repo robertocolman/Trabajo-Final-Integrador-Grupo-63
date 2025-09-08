@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(255, 255, 180); /* cambie a amarillo más claro */
+    margin: 0;
+    color: #333333;                       /* cambie el negro por gris cemento oscuro */
+}
+
+header {
+    background-color: gray;
+    color: white;
+    padding: 20px 0 10px 0;
+    text-align: center;
+    box-shadow: 0 2px 6px rgb(0, 0, 0.06);
+}
+
+header h1{
+    margin: 0 0 10px 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+    justify-content: center;
+    gap: 20px;
+    display:flex; /*con esto separo las palabras*/
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul a{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    transition: text-decoration 0.2s, color 0.2s;
+}
+
+nav ul a:hover{
+    text-decoration: underline;
+    color: rgb(255, 247, 132);
+}
+
+main{
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 0px;
+}
+.medicos{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+    max-width: 1000px;
+    padding: 20px 0;
+}
+.fotoCatalogo {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #343232;              /* le puse un marco gris */
+    box-shadow: 0 2px 6px rgba(0,0,0,.3); 
+    box-sizing: border-box;
+}
+
+footer {
+  background-color: gray;      /* mismo gris que el para buscar simetria en el estilo header/nav */
+  color: white;                
+  text-align: center;
+  padding: 10px 0;           
+  position: fixed;             
+  bottom: 0;                   
+  left: 0;
+  width: 100%;                
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1); 
+  font-weight: 500;            
+}

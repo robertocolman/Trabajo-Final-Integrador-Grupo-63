@@ -6,3 +6,4 @@ Sol Santillan
 Naira Micaela Lamas
 Nahuel Valenzuela
 Paula Virginia Leyes
+Esteban Chavez

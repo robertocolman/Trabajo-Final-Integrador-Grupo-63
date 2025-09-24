@@ -1,21 +1,22 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: rgb(255, 255, 180); /* cambie a amarillo más claro */
+    background-color: white; /* cambie a amarillo más claro */
     margin: 0;
     color: #333333;                       /* cambie el negro por gris cemento oscuro */
 }
 
 header {
-    background-color: gray;
+    /* background-color: gray; */
     color: white;
     padding: 20px 0 10px 0;
     text-align: center;
-    box-shadow: 0 2px 6px rgb(0, 0, 0.06);
+    /* box-shadow: 0 2px 6px rgb(0, 0, 0.06); */
 }
 
 header h1{
     margin: 0 0 10px 0;
-    font-size: 2em;
+    font-size: 4em;
+    color: #28a745;
 }
 
 nav ul {

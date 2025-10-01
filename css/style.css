@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Rubik", sans-serif;
     background-color: rgb(255, 255, 180); /* cambie a amarillo más claro */
     margin: 0;
     color: #333333;                       /* cambie el negro por gris cemento oscuro */
@@ -66,7 +68,7 @@ main{
 }
 
 /* footer {
-  background-color: gray;      /* mismo gris que el para buscar simetria en el estilo header/nav */
+  background-color: gray;      /* mismo gris que el para buscar simetria en el estilo header/nav
   color: white;                
   text-align: center;
   padding: 10px 0;           

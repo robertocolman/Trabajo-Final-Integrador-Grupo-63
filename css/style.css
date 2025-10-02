@@ -1,19 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+
+  --font-family: "Rubik", sans-serif;
+    --color-background: #cfe8f3;
+    --color-text: #2c4a42;
+    --header-bg: whitesmoke;
+    --header-text: #0b3d3a;
+    --nav-link-color: white;
+    --nav-link-hover: rgb(255, 247, 132);
+    --border-color: #343232;
+    --shadow-light: 0 2px 6px rgba(0,0,0,0.06);
+    --shadow-medium: 0 2px 6px rgba(0,0,0,0.3);
+    --max-width-main: 700px;
+    --max-width-grid: 1000px;
+    --grid-gap: 25px;
+    --border-radius: 8px;
+}
+
 body {
-    font-family: Poppins, sans-serif;
-    background-color: #cfe8f3; 
+    font-family: var(--font-family);
+    background-color: var(--color-background);
     margin: 0;
-    color: #2c4a42;                       
+    color: var(--color-text);
 }
 
 header {
-    background-color: whitesmoke;
-    color: #0b3d3a;
+    background-color: var(--header-bg);
+    color: var(--header-text);
     padding: 20px 0 10px 0;
     text-align: center;
-    box-shadow: 0 2px 6px rgb(0, 0, 0.06);
+    box-shadow: var(--shadow-light);
 }
 
-header h1{
+header h1 {
     margin: 0 0 10px 0;
     font-size: 2em;
 }
@@ -28,11 +48,11 @@ nav ul {
 }
 
 nav ul li {
-    display: inline-block;    /* Para respetar flexbox */
+    display: inline-block;
 }
 
 nav ul a {
-    color: white;
+    color: var(--nav-link-color);
     font-weight: 500;
     text-decoration: none;
     transition: text-decoration 0.2s, color 0.2s;
@@ -40,22 +60,21 @@ nav ul a {
 
 nav ul a:hover {
     text-decoration: underline;
-    color: rgb(255, 247, 132);
+    color: var(--nav-link-hover);
 }
 
-
-main{
-    max-width: 700px;
+main {
+    max-width: var(--max-width-main);
     margin: 40px auto 0 auto;
-    padding: 0px;
+    padding: 0;
     padding-bottom: 70px;
 }
 
-.medicos{
+.medicos {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    gap: 25px;
-    max-width: 1000px;
+    gap: var(--grid-gap);
+    max-width: var(--max-width-grid);
     padding: 20px 0;
 }
 
@@ -65,9 +84,9 @@ main{
     display: block;
     object-fit: cover; 
     margin: 20px auto;
-    border: 2px solid #343232;              /* le puse un marco gris */
-    box-shadow: 0 2px 6px rgba(0,0,0,.3); 
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-medium);
     box-sizing: border-box;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     margin-bottom: 15px;
 }

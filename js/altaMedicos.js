@@ -76,17 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                     <div class="card-body">
                         <form id="formMedico">
-                            <div class="mb-3">
-                                <label for="nombre" class="form-label">Nombre Completo</label>
-                                <input type="text" class="form-control" id="nombre" value="${medico.nombre || ''}" required>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" value="${medico.nombre || ''}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="especialidad" class="form-label">Especialidad</label>
+                                    <input type="text" class="form-control" id="especialidad" value="${medico.especialidad || ''}" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="matricula" class="form-label">Matrícula</label>
+                                    <input type="text" class="form-control" id="matricula" value="${medico.matricula || ''}" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="valorConsulta" class="form-label">Valor Consulta ($)</label>
+                                    <input type="number" class="form-control" id="valorConsulta" value="${medico.valorConsulta || ''}" required min="0">
+                                </div>
                             </div>
                             <div class="mb-3">
-                                <label for="especialidad" class="form-label">Especialidad</label>
-                                <input type="text" class="form-control" id="especialidad" value="${medico.especialidad || ''}" required>
-                            </div>
-                             <div class="mb-3">
                                 <label for="foto" class="form-label">URL de la Foto</label>
-                                <input type="url" class="form-control" id="foto" value="${medico.foto || ''}" required>
+                                <input type="text" class="form-control" id="foto" value="${medico.foto || ''}" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>

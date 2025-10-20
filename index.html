@@ -148,7 +148,8 @@
             </div>
         </footer>
     </div>
-    <script type="module">
+
+<script type="module">
         import { medicosInicial } from './config/medicosInicial.js';
 
         // Inicializar LocalStorage de médicos si está vacío
@@ -157,7 +158,7 @@
                 localStorage.setItem("medicos", JSON.stringify(medicosInicial));
                 console.log("Médicos iniciales cargados en LocalStorage.");
             }
-            // Lógica del dark mode (original)
+            // Lógica del dark mode (original de Esteban)
             const toggle = document.getElementById('dark-toggle');
             toggle.checked = localStorage.getItem('darkMode') === 'true';
 
@@ -166,6 +167,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>

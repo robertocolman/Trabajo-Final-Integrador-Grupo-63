@@ -4,31 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica IDW S.A</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Clínica IDW S.A - Iniciar Sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <input type="checkbox" id="dark-toggle" aria-label="Alternar modo oscuro"
-        style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;">
+    <input type="checkbox" id="dark-toggle" style="display: none;">
     <div id="page-wrapper">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Botón dark mode -->
-        <div class="switch-wrapper" style="position: fixed; top: 10px; right: 10px; z-index: 1000; margin: 0;">
-            <label for="dark-toggle" class="dark-switch" aria-hidden="true">
-                <span class="knob"></span>
-            </label>
-        </div>
-
-        <!-- Botón dark mode -->
-        <div class="switch-wrapper" style="position: fixed; top: 10px; right: 10px; z-index: 1000; margin: 0;">
-            <label for="dark-toggle" class="dark-switch" aria-hidden="true">
+        <div class="switch-wrapper" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+            <label for="dark-toggle" class="dark-switch">
                 <span class="knob"></span>
             </label>
         </div>
@@ -39,104 +27,53 @@
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="institucional.html">Institucional</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="medicos.html">Medicos Especialistas</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="altaMedicos.html">Alta Medico</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.html">Contacto</a>
-                            </li>
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="institucional.html">Institucional</a></li>
+                            <li class="nav-item"><a class="nav-link" href="medicos.html">Medicos Especialistas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="altaMedicos.html">Alta Medico</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                         </ul>
-
-                        <ul class="navbar-nav mb-2 mb-lg-0 **ms-auto**">
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.html">Login</a>
-                            </li>
+                        <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="login.html">Login</a></li>
                         </ul>
                     </div>
                 </div>
             </nav>
         </header>
-        <!-- ---------- END NAV BAR ---------- -->
 
-        <!-- ---------- Etiqueta de Contacto ---------- -->
-        <div class="d-flex justify-content-center align-items-start mt-5 mb-5">
-            <div class="col-md-4">
+        <main class="container d-flex justify-content-center align-items-center" style="min-height: 60vh;">
+            <div class="col-md-6 col-lg-5">
                 <div class="card h-100 text-center">
-                    <main class="container py-5 flex-grow-1">
-                        <h2 class="mb-4 text-center">Iniciar sesión</h2>
-                        <form id="formLogin" class="row justify-content-center">
-                            <div class="col-md-6 col-lg-4">
-                                <div class="mb-3">
-                                    <label for="usuario" class="form-label">Usuario</label>
-                                    <input type="text" id="usuario" class="form-control" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="clave" class="form-label">Contraseña</label>
-                                    <input type="password" id="clave" class="form-control" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-4">Iniciar Sesión</h2>
+                        <form id="formLogin">
+                            <div class="mb-3 text-start">
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" id="usuario" class="form-control" required>
                             </div>
+                            <div class="mb-3 text-start">
+                                <label for="clave" class="form-label">Contraseña</label>
+                                <input type="password" id="clave" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 mt-3">Ingresar</button>
                         </form>
-                        <div id="mensaje" class="row justify-content-center mt-3"></div>
-                    </main>
+                        <div id="mensaje" class="mt-3"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- ---------- Fin Contacto ---------- -->
+        </main>
 
-    <!-- ---------- FOOTER ---------- -->
-    <footer class="bg-dark text-center text-white py-4 mb-3 mx-3 ">
-        <p class="mb-3">&copy; 2025 Clínica IDW S.A</p>
-
-        <div class="d-flex justify-content-center">
-            <a href="https://www.facebook.com/" target="_blank" class="text-white mx-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-facebook" viewBox="0 0 16 16">
-                    <path
-                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.425c0-2.017 1.195-3.149 3.022-3.149.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
-                </svg>
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" class="text-white mx-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                    class="bi bi-instagram" viewBox="0 0 16 16">
-                    <path d="M8 0C5.8 0 5.5.01 4.7.05c-.8.04-1.4.18-1.9.39a3.8 
-            3.8 0 0 0-1.4.9 3.8 3.8 0 0 0-.9 1.4c-.21.5-.35 
-            1.1-.39 1.9C0 5.5 0 5.8 0 8s.01 2.5.05 3.3c.04.8.18 
-            1.4.39 1.9.2.5.5.9.9 1.4.5.5.9.7 1.4.9.5.21 1.1.35 
-            1.9.39.8.04 1.1.05 3.3.05s2.5-.01 3.3-.05c.8-.04 
-            1.4-.18 1.9-.39.5-.2.9-.5 1.4-.9.5-.5.7-.9.9-1.4.21-.5.35-1.1.39-1.9.04-.8.05-1.1.05-3.3s-.01-2.5-.05-3.3c-.04-.8-.18-1.4-.39-1.9a3.8 
-            3.8 0 0 0-.9-1.4 3.8 3.8 0 0 0-1.4-.9c-.5-.21-1.1-.35-1.9-.39C10.5.01 
-            10.2 0 8 0zm0 1.4c2.2 0 2.5.01 3.3.05.7.03 1.1.15 1.3.25.3.1.5.2.8.5.2.2.4.5.5.8.1.2.2.6.25 1.3.04.8.05 1.1.05 3.3s-.01 2.5-.05 
-            3.3c-.03.7-.15 1.1-.25 1.3-.1.3-.2.5-.5.8-.2.2-.5.4-.8.5-.2.1-.6.2-1.3.25-.8.04-1.1.05-3.3.05s-2.5-.01-3.3-.05c-.7-.03-1.1-.15-1.3-.25-.3-.1-.5-.2-.8-.5-.2-.2-.4-.5-.5-.8-.1-.2-.2-.6-.25-1.3C1.41 
-            10.5 1.4 10.2 1.4 8s.01-2.5.05-3.3c.03-.7.15-1.1.25-1.3.1-.3.2-.5.5-.8.2-.2.5-.4.8-.5.2-.1.6-.2 1.3-.25.8-.04 1.1-.05 3.3-.05zm0 
-            2.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 
-            5.2zm5.2-6.9a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z" />
-                </svg>
-            </a>
-        </div>
-    </footer>
-    <!-- ---------- END FOOTER ---------- -->
+        <footer class="bg-dark text-center text-white py-4 mb-3 mx-3">
+            <p class="mb-0">&copy; 2025 Clínica IDW S.A | Grupo 63</p>
+        </footer>
     </div>
 
-    <script src="config/usuarios.js"></script>
+    <script src="usuarios.js"></script> 
     <script src="js/login.js"></script>
 </body>
 

@@ -243,3 +243,16 @@ main {
   border-radius: var(--border-radius);
   margin-bottom: 15px;
 }
+
+/* --- Fix para tarjetas de médicos --- */
+
+#catalogoMedicos .card {
+    height: 100%; 
+    padding-top: 15px;
+}
+
+#catalogoMedicos .card-img-top {
+    height: 250px;
+    object-fit: contain;
+    width: 100%;
+}

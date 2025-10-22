@@ -30,3 +30,4 @@ Este proyecto consiste en desarrollar una **página web para la Clínica IDW S.A
 - CSS3
 - Bootstrap 5
 - Git / GitHub
+- Javascript

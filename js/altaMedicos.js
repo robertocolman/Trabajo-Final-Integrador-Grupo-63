@@ -108,6 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <label for="horarios" class="form-label">Horarios</label>
                                 <textarea class="form-control" id="horarios" rows="2" required>${medico.horarios || ''}</textarea>
                             </div>
+                            <div class="mb-3">
+                                <label for="obrasSociales" class="form-label">Obras Sociales (separadas por coma)</label>
+                                <input type="text" class="form-control" id="obrasSociales" value="${medico.obrasSociales || ''}">
+                            </div>
                             <button type="submit" class="btn btn-primary">${botonTexto}</button>
                             ${esModoEdicion ? '<button type="button" class="btn btn-secondary ms-2" onclick="cancelarEdicion()">Cancelar</button>' : ''}
                         </form>
@@ -119,16 +123,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('formMedico').addEventListener('submit', manejarSubmitFormulario);
     }
 
-    // --- MANEJADOR DEL SUBMIT DEL FORMULARIO ---
+    // --- FORMULARIO ---
     function manejarSubmitFormulario(e) {
-        e.preventDefault();
-        const nuevoMedico = {
-            nombre: document.getElementById('nombre').value,
-            especialidad: document.getElementById('especialidad').value,
-            foto: document.getElementById('foto').value,
-            email: document.getElementById('email').value,
-            horarios: document.getElementById('horarios').value
-        };
+    e.preventDefault();
+    const nuevoMedico = {
+        nombre: document.getElementById('nombre').value,
+        especialidad: document.getElementById('especialidad').value,
+        obrasSociales: document.getElementById('obrasSociales').value,
+        matricula: document.getElementById('matricula').value,
+        valorConsulta: document.getElementById('valorConsulta').value,
+        foto: document.getElementById('foto').value,
+        email: document.getElementById('email').value,
+        horarios: document.getElementById('horarios').value,
+    };
 
         if (esModoEdicion) {
             // Actualizar médico
@@ -158,8 +165,11 @@ document.addEventListener('DOMContentLoaded', () => {
             <p><strong>ID:</strong> ${medico.id}</p>
             <p><strong>Nombre:</strong> ${medico.nombre}</p>
             <p><strong>Especialidad:</strong> ${medico.especialidad}</p>
+            <p><strong>Obras Sociales:</strong> ${medico.obrasSociales || 'No especificadas'}</p>
             <p><strong>Email:</strong> ${medico.email}</p>
             <p><strong>Horarios:</strong> ${medico.horarios}</p>
+            <p><strong>Matrícula:</strong> ${medico.matricula}</p>
+            <p><strong>Valor Consulta:</strong> $${medico.valorConsulta.toLocaleString('es-AR')}</p>
         `;
         new bootstrap.Modal(document.getElementById('visualizarModal')).show();
     }
@@ -185,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetearFormulario();
     }
 
-    // --- FUNCIONES AUXILIARES ---
+    // --- FUNCIONES AUXILIARES: Local Storage ---
     function guardarEnLocalStorage() {
         localStorage.setItem('medicos', JSON.stringify(medicos));
     }

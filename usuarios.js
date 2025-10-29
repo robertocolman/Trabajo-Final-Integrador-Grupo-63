@@ -1,7 +1,3 @@
-/*
-    Descripción: Simula una base de datos de usuarios autorizados.
-*/
-
 const usuarios = [
     {
         usuario: "admin",

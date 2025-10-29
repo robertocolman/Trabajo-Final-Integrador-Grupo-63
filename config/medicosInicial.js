@@ -1,7 +1,3 @@
-/*
-    Archivo: config/medicosInicial.js
-    Descripción: Contiene la lista inicial y detallada de médicos para cargar en LocalStorage que creamos al inicio del proyecto.
-*/
 export const medicosInicial = [
     {
         id: 1,

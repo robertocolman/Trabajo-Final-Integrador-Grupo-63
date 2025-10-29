@@ -1,8 +1,3 @@
-/*
-    Archivo: js/login.js
-    Descripción: Maneja la lógica del formulario de inicio de sesión con mensajes de diagnóstico.
-*/
-
 console.log("✅ El archivo login.js se cargó correctamente.");
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,21 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const claveInput = document.getElementById('clave');
     const mensajeDiv = document.getElementById('mensaje');
 
-    // Verificamos si encontramos el formulario
     if (formLogin) {
         console.log("✅ Formulario de login encontrado en el HTML.");
 
         formLogin.addEventListener('submit', (evento) => {
             console.log("🅿️ El usuario presionó 'Ingresar'.");
             
-            // Prevenimos que el formulario recargue la página.
             evento.preventDefault(); 
 
             const usuario = usuarioInput.value;
             const clave = claveInput.value;
             console.log(`🔎 Buscando usuario: '${usuario}' con clave: '${clave}'`);
 
-            // Verificamos si la variable 'usuarios' existe antes de usarla
             if (typeof usuarios !== 'undefined') {
                 const usuarioValido = usuarios.find(user => user.usuario === usuario && user.clave === clave);
 

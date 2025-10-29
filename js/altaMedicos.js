@@ -1,15 +1,8 @@
-/*
-    Archivo: js/altaMedicos.js
-    Descripción: Lógica completa para la administración de médicos (CRUD).
-*/
-
-// --- CÓDIGO DE PROTECCIÓN DE RUTA ---
 const usuarioLogueado = localStorage.getItem('usuarioLogueado');
 if (!usuarioLogueado) {
     window.location.href = 'login.html';
 }
 
-// --- LÓGICA PARA CERRAR SESIÓN ---
 const botonCerrarSesion = document.getElementById('botonCerrarSesion');
 if (botonCerrarSesion) {
     botonCerrarSesion.addEventListener('click', () => {
@@ -19,7 +12,6 @@ if (botonCerrarSesion) {
     });
 }
 
-// --- LÓGICA DE LA PÁGINA (CRUD) ---
 document.addEventListener('DOMContentLoaded', () => {
     const listaMedicosContainer = document.getElementById('listaMedicosContainer');
     const crudContainer = document.getElementById('crudContainer');
@@ -27,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let esModoEdicion = false;
     let idMedicoEditar = null;
 
-    // --- FUNCIÓN PARA RENDERIZAR LA TABLA ---
     function renderizarTabla() {
         if (medicos.length === 0) {
             listaMedicosContainer.innerHTML = "<p>No hay médicos registrados.</p>";
@@ -63,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         listaMedicosContainer.innerHTML = tablaHTML;
     }
 
-    // --- FUNCIÓN PARA RENDERIZAR EL FORMULARIO ---
     function renderizarFormulario(medico = {}) {
         const titulo = esModoEdicion ? 'Modificar Médico' : 'Crear Nuevo Médico';
         const botonTexto = esModoEdicion ? 'Guardar Cambios' : 'Crear Médico';
@@ -123,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('formMedico').addEventListener('submit', manejarSubmitFormulario);
     }
 
-    // --- FORMULARIO ---
     function manejarSubmitFormulario(e) {
     e.preventDefault();
     const nuevoMedico = {
@@ -138,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
         if (esModoEdicion) {
-            // Actualizar médico
             const index = medicos.findIndex(m => m.id === idMedicoEditar);
             medicos[index] = { ...medicos[index], ...nuevoMedico };
             alert('Médico modificado con éxito.');
@@ -154,7 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarTabla();
     }
     
-    // --- FUNCIONES GLOBALES PARA LOS BOTONES ---
     window.visualizarMedico = function(id) {
         const medico = medicos.find(m => m.id === id);
         const modalBody = document.getElementById('modal-body-content');
@@ -195,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         resetearFormulario();
     }
 
-    // --- FUNCIONES AUXILIARES: Local Storage ---
     function guardarEnLocalStorage() {
         localStorage.setItem('medicos', JSON.stringify(medicos));
     }
@@ -206,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
         renderizarFormulario();
     }
 
-    // --- INICIALIZACIÓN ---
     renderizarTabla();
     renderizarFormulario();
 });

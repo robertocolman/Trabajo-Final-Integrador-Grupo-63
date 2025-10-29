@@ -1,16 +1,9 @@
-/*
-    Archivo: js/medicos.js
-    Descripción: Carga y muestra el catálogo público de médicos.
-*/
-
-// 1. Importamos la lista inicial de médicos que teniamos cuando arrancamos el proyecto.
 import { medicosInicial } from '../config/medicosInicial.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const catalogoMedicos = document.getElementById('catalogoMedicos');
     let medicos;
 
-    // 2. Lógica "Get or Create"
     if (localStorage.getItem('medicos')) {
         medicos = JSON.parse(localStorage.getItem('medicos'));
     } else {
@@ -18,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('medicos', JSON.stringify(medicos));
     }
 
-    // 3. Renderizado de tarjetas (con los campos nuevos)
     if (medicos.length === 0) {
         catalogoMedicos.innerHTML = '<p class="text-center">No hay médicos disponibles en este momento.</p>';
         return;

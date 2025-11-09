@@ -45,8 +45,42 @@
             </nav>
         </header>
 
-        <main>
-            <div class="d-flex justify-content-center align-items-start mt-5">
+        <main class="container">
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-10"> <div id="clinicaCarousel" class="carousel slide" data-bs-ride="carousel">
+                        
+                        <div class="carousel-indicators">
+                            <button type"button" data-bs-target="#clinicaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type"button" data-bs-target="#clinicaCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type"button" data-bs-target="#clinicaCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+    
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="img/clinica1.jpg" class="d-block w-100" alt="Fachada de la Clínica" style="max-height: 400px; object-fit: cover;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/clinica2.jpg" class="d-block w-100" alt="Sala de espera de la Clínica" style="max-height: 400px; object-fit: cover;">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img/clinica3.jpg" class="d-block w-100" alt="Equipamiento de la Clínica" style="max-height: 400px; object-fit: cover;">
+                            </div>
+                        </div>
+    
+                        <button class="carousel-control-prev" type="button" data-bs-target="#clinicaCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#clinicaCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card h-100 text-center p-4">
                         <h2 class="card-title mb-3">Bienvenidos</h2>
@@ -82,9 +116,24 @@
             </div>
         </main>
 
-        <footer class="bg-dark text-center text-white py-4 mb-3 mx-3">
+        <footer class="bg-dark text-center text-white py-4 mb-3 mx-3 ">
             <p class="mb-3">© 2025 Clínica IDW S.A | Grupo 63</p>
+
             <div class="d-flex justify-content-center">
+                <a href="https://www.facebook.com/" target="_blank" class="text-white mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.425c0-2.017 1.195-3.149 3.022-3.149.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="text-white mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M8 0C5.8 0 5.5.01 4.7.05c-.8.04-1.4.18-1.9.39a3.8 3.8 0 0 0-.9 1.4c-.21.5-.35 1.1-.39 1.9C0 5.5 0 5.8 0 8s.01 2.5.05 3.3c.04.8.18 1.4.39 1.9.2.5.5.9.9 1.4.5.5.9.7 1.4.9.5.21 1.1.35 1.9.39.8.04 1.1.05 3.3.05s2.5-.01 3.3-.05c.8-.04 1.4-.18 1.9-.39.5-.2.9-.5 1.4-.9.5-.5.7-.9.9-1.4.21-.5.35-1.1.39-1.9.04-.8.05-1.1.05-3.3s-.01-2.5-.05-3.3c-.04-.8-.18-1.4-.39-1.9a3.8 3.8 0 0 0-.9-1.4 3.8 3.8 0 0 0-1.4-.9c-.5-.21-1.1-.35-1.9-.39C10.5.01 10.2 0 8 0zm0 1.4c2.2 0 2.5.01 3.3.05.7.03 1.1.15 1.3.25.3.1.5.2.8.5.2.2.4.5.5.8.1.2.2.6.25 1.3.04.8.05 1.1.05 3.3s-.01 2.5-.05 3.3c-.03.7-.15 1.1-.25 1.3-.1.3-.2.5-.5.8-.2.2-.5.4-.8.5-.2.1-.6.2-1.3.25-.8.04-1.1.05-3.3.05s-2.5-.01-3.3-.05c-.7-.03-1.1-.15-1.3-.25-.3-.1-.5-.2-.8-.5-.2-.2-.4-.5-.5-.8-.1-.2-.2-.6-.25-1.3C1.41 10.5 1.4 10.2 1.4 8s.01-2.5.05-3.3c.03-.7.15-1.1.25-1.3.1-.3.2-.5.5-.8.2-.2.5-.4.8-.5.2-.1.6-.2 1.3-.25.8-.04 1.1-.05 3.3-.05zm0 2.6a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2zm5.2-6.9a.96.96 0 1 1-1.92 0 .96.96 0 0 1 1.92 0z" />
+                    </svg>
+                </a>
             </div>
         </footer>
     </div>

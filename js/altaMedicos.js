@@ -1,12 +1,12 @@
-const usuarioLogueado = localStorage.getItem('usuarioLogueado');
-if (!usuarioLogueado) {
+const token = sessionStorage.getItem('accessToken');
+if (!token) {
     window.location.href = 'login.html';
 }
 
 const botonCerrarSesion = document.getElementById('botonCerrarSesion');
 if (botonCerrarSesion) {
     botonCerrarSesion.addEventListener('click', () => {
-        localStorage.removeItem('usuarioLogueado');
+        sessionStorage.removeItem('accessToken');
         alert('Sesión cerrada correctamente.');
         window.location.href = 'login.html';
     });

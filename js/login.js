@@ -1,45 +1,69 @@
-console.log("✅ El archivo login.js se cargó correctamente.");
 
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("✅ El HTML de la página terminó de cargar.");
-
+    
+    // agarro el form y el div del mensage
     const formLogin = document.getElementById('formLogin');
-    const usuarioInput = document.getElementById('usuario');
-    const claveInput = document.getElementById('clave');
     const mensajeDiv = document.getElementById('mensaje');
 
-    if (formLogin) {
-        console.log("✅ Formulario de login encontrado en el HTML.");
+    
+    formLogin.addEventListener('submit', async (e) => {
+        
+        
+        e.preventDefault(); 
 
-        formLogin.addEventListener('submit', (evento) => {
-            console.log("🅿️ El usuario presionó 'Ingresar'.");
-            
-            evento.preventDefault(); 
+        // optener los valores
+        const usuario = document.getElementById('usuario').value;
+        const clave = document.getElementById('clave').value;
+        
+        
+        mensajeDiv.innerHTML = '';
+        mensajeDiv.classList.remove('alert', 'alert-danger', 'alert-success');
 
-            const usuario = usuarioInput.value;
-            const clave = claveInput.value;
-            console.log(`🔎 Buscando usuario: '${usuario}' con clave: '${clave}'`);
+        // probar el login
+        try {
+            // esto es para los headers, q sea json
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
 
-            if (typeof usuarios !== 'undefined') {
-                const usuarioValido = usuarios.find(user => user.usuario === usuario && user.clave === clave);
+            // pasar el usuario y la clave a stringify
+            const bodyEnJSON = JSON.stringify({
+                username: usuario,
+                password: clave
+            });
 
-                if (usuarioValido) {
-                    console.log("👍 ¡Usuario válido encontrado!", usuarioValido);
-                    mensajeDiv.innerHTML = '<div class="alert alert-success">¡Bienvenido! Redirigiendo...</div>';
-                    localStorage.setItem('usuarioLogueado', 'true');
-                    setTimeout(() => {
-                        window.location.href = 'altaMedicos.html';
-                    }, 1500);
-                } else {
-                    console.log("❌ Usuario o clave incorrectos.");
-                    mensajeDiv.innerHTML = '<div class="alert alert-danger">Usuario o contraseña incorrectos.</div>';
-                }
-            } else {
-                console.error("🔥 ERROR: El archivo 'usuarius.js' no se cargó o la variable 'usuarios' no está definida.");
-                mensajeDiv.innerHTML = '<div class="alert alert-danger">Error de configuración. Contacte al administrador.</div>';
+            // llamar a la api dumyjson
+            const respuesta = await fetch('https://dummyjson.com/auth/login', {
+                method: 'POST',
+                headers: myHeaders,
+                body: bodyEnJSON
+            });
+
+            // agarro la data
+            const data = await respuesta.json();
+
+            // cheqear si anduvo
+            if (!respuesta.ok) {
+                
+                throw new Error(data.message || 'Error en el inicio de sesión');
             }
-        });
-    } else {
-        console.error("🔥 ERROR: No se encontró el formulario con id='formLogin' en el HTML.");
-    }
+
+            // si esta todo bien, guardar el token
+            console.log('Login exitoso:', data);
+            sessionStorage.setItem('accessToken', data.token);
+            
+            // pongo el cartel de exito
+            mensajeDiv.innerHTML = '<strong>¡Éxito!</strong> Redirigiendo a la página de administración...';
+            mensajeDiv.classList.add('alert', 'alert-success');
+
+            // esperar 2 segundos y mandar a la otra pagina
+            setTimeout(() => {
+                window.location.href = 'altaMedicos.html';
+            }, 2000);
+
+        } catch (error) {
+            // mostrar el error en el div si sale mal
+            mensajeDiv.innerHTML = `<strong>Error:</strong> ${error.message}`;
+            mensajeDiv.classList.add('alert', 'alert-danger');
+        }
+    });
 });

@@ -59,7 +59,7 @@
               </li>
             </ul>
 
-            <ul class="navbar-nav mb-2 mb-lg-0 **ms-auto**">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
               <li class="nav-item">
                 <a class="nav-link" href="login.html">Login</a>
               </li>
@@ -71,7 +71,7 @@
     <!-- ---------- END NAV BAR ---------- -->
 
     <!-- ---------- Etiqueta de Contacto ---------- -->
-    <div class="d-flex justify-content-center align-items-start mt-5 mb-5">
+    <div class="d-flex justify-content-center align-items-start mb-5">
       <div class="col-md-4">
         <div class="card h-100 text-center">
           <h3 class="card-title mt-3"><u>Datos de Contacto</u></h3>
@@ -132,6 +132,15 @@
     </footer>
     <!-- ---------- END FOOTER ---------- -->
   </div>
+  <script>
+    // Lógica del dark mode (original)
+    const toggle = document.getElementById('dark-toggle');
+    toggle.checked = localStorage.getItem('darkMode') === 'true';
+
+    toggle.addEventListener('change', () => {
+        localStorage.setItem('darkMode', toggle.checked);
+    });
+</script>
 </body>
 
 </html>

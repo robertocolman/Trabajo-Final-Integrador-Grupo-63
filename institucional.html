@@ -58,7 +58,7 @@
               </li>
             </ul>
 
-            <ul class="navbar-nav mb-2 mb-lg-0 **ms-auto**">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
               <li class="nav-item">
                 <a class="nav-link" href="login.html">Login</a>
               </li>
@@ -70,7 +70,8 @@
     </header>
 
     <!-- ---------- QUIENES SOMOS ---------- -->
-    <div class="d-flex justify-content-center align-items-start mt-5">
+   
+    <div class="d-flex justify-content-center align-items-start">
       <div class="col-md-8">
         <div class="card h-100 text-center p-4">
           <h2 class="card-title mb-3">Quiénes somos</h2>
@@ -90,7 +91,7 @@
       </div>
     </div>
 
-    <!-- ---------- MISION - VISION ---------- -->
+    <!-- ---------- MISION - VISION (no hay mucho texto??)---------- -->
     <div class="d-flex justify-content-center align-items-start mt-4 mb-5">
       <div class="col-md-8">
         <div class="card h-100 text-center p-4">
@@ -116,7 +117,7 @@
         </div>
       </div>
     </div>
-
+  
     <!-- ---------- FOOTER ---------- -->
     <footer class="bg-dark text-center text-white py-4 mb-3 mx-3 ">
       <p class="mb-3">&copy; 2025 Clínica IDW S.A | Grupo 63</p>
@@ -150,6 +151,16 @@
     </footer>
     <!-- ---------- END FOOTER ---------- -->
   </div>
+<script>
+    // Lógica del dark mode (original)
+    const toggle = document.getElementById('dark-toggle');
+    toggle.checked = localStorage.getItem('darkMode') === 'true';
+
+    toggle.addEventListener('change', () => {
+        localStorage.setItem('darkMode', toggle.checked);
+    });
+</script>
+
 </body>
 
 </html>

@@ -28,18 +28,26 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent">
                         <span class="navbar-toggler-icon"></span>
-                    </button>
+                    </button>   
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
                             <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="institucional.html">Institucional</a></li>
-                            <li class="nav-item"><a class="nav-link" href="medicos.html">Medicos Especialistas</a></li>
-                            <li class="nav-item"><a class="nav-link" href="altaMedicos.html">Alta Medico</a></li>
-                            <li class="nav-item"><a class="nav-link" href="admin_users.html.html">Admin Medico</a></li>
+                            <li class="nav-item"><a class="nav-link" href="medicos.html">Medicos Especialistas</a></li>                           
+                            <li class="nav-item" id="navAltaMedico" style="display: none;"><a class="nav-link" href="altaMedicos.html">Alta Medico</a></li>
+                            <li class="nav-item" id="navAdminMedico" style="display: none;"><a class="nav-link" href="admin_users.html">Admin Medico</a></li>
+                            <li class="nav-item" id="navAdminOS" style="display: none;"><a class="nav-link" href="altaobsociales.html">Admin Obras Sociales</a></li>
+                            <li class="nav-item" id="navAdminEsp" style="display: none;"><a class="nav-link" href="altaoespecialidadea.html">Admin Especialidades</a></li>
+                            <li class="nav-item" id="navAdminReservas" style="display: none;"><a class="nav-link" href="admin_resevas.html">Admin Reservas</a></li>
                             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                         </ul>
                         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                            <li class="nav-item" id="navLogin">
+                                <a class="nav-link" href="login.html">Login</a>
+                            </li>
+                            <li class="nav-item" id="navLogout" style="display: none;">
+                                <button id="botonCerrarSesionPublico" class="btn btn-outline-danger btn-sm">Cerrar Sesión</button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -151,5 +159,7 @@
             }
         });
     </script>
+
+    <script src="js/navoculto.js"></script>
 </body>
 </html>

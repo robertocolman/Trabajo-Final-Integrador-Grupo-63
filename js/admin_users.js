@@ -14,13 +14,13 @@ if (botonCerrarSesion) {
     });
 }
 
-// Cargar y mostrar los usuarios de DumyJSON
+// Cargar y mostrar los usuarios de DomyJSON
 document.addEventListener('DOMContentLoaded', () => {
     const listaUsuariosContainer = document.getElementById('listaUsuariosContainer');
     
     async function cargarUsuarios() {
         try {
-            // Llamar a la API 
+            
             const respuesta = await fetch('https://dummyjson.com/users');
 
             if (!respuesta.ok) {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Renderizar la tabla de usuarios del domyjson
+            
             renderizarTablaUsuarios(usuarios);
 
         } catch (error) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <th>ID</th>
                         <th>Nombre Completo</th>
                         <th>Email</th>
-                        <th>Teléfono</th>
+                        
                         <th>Nombre de Usuario</th>
                     </tr>
                 </thead>
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td>${usuario.id}</td>
                             <td>${usuario.firstName} ${usuario.lastName}</td>
                             <td>${usuario.email}</td>
-                            <td>${usuario.phone}</td>
                             <td>${usuario.username}</td>
                         </tr>
                     `).join('')}

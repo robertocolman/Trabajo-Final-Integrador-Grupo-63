@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p class="card-text mb-1"><strong>Turnos disponibles:</strong> ${medico.horarios}</p>
                     <p class="card-text"><strong>Valor consulta:</strong> $${medico.valorConsulta ? medico.valorConsulta.toLocaleString('es-AR') : 'Consultar'}</p>
                     <div class="mt-auto">
-                        <a class="btn btn-primary btn-sm" href="#">Reservar turno</a>
+                        <a class="btn btn-primary btn-sm" href="reserva.html?id=${medico.id}">Reservar turno</a>
                     </div>
                 </div>
             </div>
